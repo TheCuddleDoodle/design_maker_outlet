@@ -235,11 +235,14 @@
             <input type="file" id="tshirt-custompicture" class="btn btn-primary" />
             <br>
             <form id="image-form">
-               <button class="btn btn-success " style="
+               <button class="btn btn-success" style="
     width: 100%;
 " type="submit">Upload the design</button>
             </form>
-
+            <br>
+            <p class="btn btn-dark" style="
+    width: 100%;
+"  onclick="blank_canvas()">Standard Design</p>
             <br>
 
             <p>Press DEL key to reset the canvas</p>
@@ -403,7 +406,11 @@
 
       const file = document.querySelector("#tshirt-custompicture").files[0]
 
-
+      function blank_canvas(){
+       alert('This action will change the design of the VDP to default(black). To revert to the previous design, please refresh the webpage')
+        template = document.querySelector("#tshirt-backgroundpicture1")
+        template.setAttribute('src','./black.png')
+      }
       function canvas_new_method() {
          html2canvas(screen).then(canvas => {
             canvas.toBlob((blob) => {
