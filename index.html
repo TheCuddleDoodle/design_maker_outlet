@@ -19,7 +19,16 @@
       }
    </script>
 
-
+   <script>
+     setInterval(()=>{
+    var isMobile = Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1;
+    if(isMobile){
+        document.body.innerHTML = '';
+        alert("Site doesn't support mobile view, please switch to desktop")
+    }
+}
+,5000)
+   </script>
 
    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
