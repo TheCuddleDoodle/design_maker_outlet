@@ -21,7 +21,7 @@
 
    <script>
      setInterval(()=>{
-    var isMobile = Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1;
+    var isMobile = Math.min(window.screen.width, window.screen.height) < 768 && navigator.userAgent.indexOf("Mobi") > -1;
     if(isMobile){
         document.body.innerHTML = '';
         alert("Site doesn't support mobile view, please switch to desktop")
